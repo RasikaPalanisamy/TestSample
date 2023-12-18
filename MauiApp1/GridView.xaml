@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.GridView">
+
+    <ContentView.BindingContext>
+        <local:GridViewModel/>
+    </ContentView.BindingContext>
+
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+             
+             Text="Test"/>
+
+            <ScrollView x:Name="scrollView" Orientation="Both" Scrolled="scrollView_Scrolled" Grid.Row="1">
+                <local:CustomGrid x:Name="container"  />
+            </ScrollView>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
